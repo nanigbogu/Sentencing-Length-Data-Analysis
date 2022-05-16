@@ -67,22 +67,22 @@ with col10:
     'Guilty Plea and Trial'])
 with col11:
     presentence= st.selectbox('Pre-Sentence Detention Status',['In Custody','On Bail',
-    'Released on Own Recognizance','Other'])
+    'Released on Own Recognizance'])
 
 with col12:
     crime_type= st.selectbox('Primary Offense (Offense Carrying Largest Min. Sentence)',['Administration of Justice','Antitrust','Arson',
 'Assault','Bribery/Corruption','Burglary/Trespass',
 'Child Pornography','Commercialized Vice','Drug Possession',
 'Drug Trafficking','Environmental','Extortion/Racketeering',
-'Firearms','Food and Drug','Forgery/Counter/Copyright',
+'Firearms','Food and Drug','Forgery/Copyright',
 'Fraud/Theft/Embezzlement','Immigration','Individual Rights',
 'Kidnapping','Manslaughter','Money Launder','Murder',
 'National Defense','Obscenity/Other Sex Offenses',
 'Prison Offenses','Robbery','Sex Abuse','Stalking/Harassing'
-'Tax','Other'])
+'Tax'])
 with col13:
     drug_type= st.selectbox('Drug Type',['None', 'Cocaine','Crack','Heroin','Marijuana',
-    'Methamphetamine','Fentanyl','Other'])
+    'Methamphetamine','Fentanyl'])
 with col14:
     weapon= st.selectbox('Use or Possession of Firearm During Crime',['Yes','No'])
 
@@ -215,7 +215,7 @@ def sent_predicter(pred_model,user_input):
         user_input_code['crime_type'] = 13
     elif crime_type == 'Food and Drug':
         user_input_code['crime_type'] = 14
-    elif crime_type == 'Forgery/Counter/Copyright':
+    elif crime_type == 'Forgery/Copyright':
         user_input_code['crime_type'] = 15
     elif crime_type == 'Fraud/Theft/Embezzlement':
         user_input_code['crime_type'] = 16
@@ -261,7 +261,7 @@ def sent_predicter(pred_model,user_input):
     # return prediction
 
 with st.spinner("Predicting..."):
-    time.sleep(2)
+    time.sleep(0.25)
     prediction = sent_predicter(lasso_pipe, user_input)
 st.title('The predicted sentence length is '+str(prediction)+' years.')
 
