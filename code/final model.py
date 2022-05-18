@@ -20,13 +20,13 @@ y = df_data['sentence_length']
 
 
 numeric = ['count_convictons','age']
-categorical = ['year_sentenced','dependents','race','disposition','citizen', 'state','criminal_hist', 'drug_type','weapon','gender','crime_type','case_type','presentence_stat','sentence_type','college']
+categorical = ['year_sentenced','dependents','race','disposition','citizen', 'state','criminal_hist', 'drug_type','weapon','gender','crime_type','case_type','presentence_stat','sentence_type','college','imprisoned']
 
 X_train,X_test,y_train,y_test = train_test_split(X,y,random_state=42)
 
 ctx = ColumnTransformer(
     [('ss',StandardScaler(),numeric),
-     ('ohe',OneHotEncoder(handle_unknown='ignore',drop='first'),\
+     ('ohe',OneHotEncoder(handle_unknown='ignore'),\
      categorical)],
      verbose_feature_names_out=False,
      remainder = 'passthrough'
