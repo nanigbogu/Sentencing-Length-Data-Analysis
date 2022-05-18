@@ -46,7 +46,7 @@ On Bail – Trial/plea proceeds with the defendant released from custody, with c
 Released on Recognizance – Defendant is released from custody without cash or bond pledged to the court.
 
 Crime Type
-Type of Crime Carrying the Largest Minimum Sentence
+Type of Crime Carrying the Highest Statuatory Maximum
 
 Drug Type
 Type of Drug for which the associated charge will incur the highest penalty
