@@ -1,7 +1,6 @@
 from pyexpat import model
 import streamlit as st
 import numpy as np
-import plotly.express as px
 import pickle
 import time
 import pandas as pd
