@@ -2,18 +2,36 @@
 
 ### Overview
 
+The U.S. Sentencing Commission keeps a comprehensive array of data regarding federal crime and sentencing for each year. This data includes information for each case with details related to
+offense committed, defendant demographic, sentencing guidelines, location, and sentencing outcome, among other things. The commission uses this information to conduct analyses and to establish sentencing practices for federal courts. If you want to explore this further, click [here](https://www.ussc.gov/research/datafiles/commission-datafiles). The years 2018-2021 were selected as the commission amended its data formats in 2018, making the post-2017 data difficult to reconcile with the previous data.
 
+Sentencing guidelines take into account seriousness of the offense and offender’s criminal history. Each type of crime is assigned a base offense level and is assigned specific offense characteristics that increase or decrease the base. If you want to learn more, click [here](https://www.ussc.gov/sites/default/files/pdf/about/overview/Overview_Federal_Sentencing_Guidelines.pdf).
+
+The Sentencing Commission has itself conducted similar studies in the past. [Here](https://www.ussc.gov/sites/default/files/pdf/research-and-publications/research-publications/2010/20100311_Multivariate_Regression_Analysis_Report.pdf) is a study on demographic differences in federal sentencing practices from 2010, and [here](https://www.ussc.gov/sites/default/files/pdf/research-and-publications/research-publications/2017/20171114_Demographics.pdf) is a report from 2017. The struture of modeling and analysis differs significantly from that of the two cited studies, but the studies did provide a frame of reference through which we were able to assess our findings.
 
 ### Problem Statement
 
+The United States Sentencing Commission wanted recommendations on what adjustments to make to sentencing practices. We will analyze the impact of variables relating to offender demographics, details of offense and trial proceedings on the sentencing outcomes of federal cases dating from 2018 to 2021. 
 
 ---
+
+## Table of Contents
+
+|Notebook & Content|Description|
+|---|---|
+|**README**|Overview, Background, Problem Statement, Datasets and Dictionaries, Overview of Data Analysis, Conclusions/ Recommendations| 
+|**EDA, Cleaning, Imputing, & Feature Engineering**|Data Cleaning and Analysis| 
+|**Visualizations**|Further Data Analysis with Graphics| 
+|**Incarceration.pdf**|Sentencing Lengths Presentation Slides|
+|**Tableau**|Data Dashboard [here](https://public.tableau.com/app/profile/nicole.anigbogu/viz/Incarceration_16521907161480/PresentationDashboard?publish=yes)|
+|**final_model**|Best Model (Lasso) and Coefficient Analysis|
+|**Streamlit App**|Live Sentence Length Predictions [here](https://share.streamlit.io/nanigbogu/incarceration/main/app.py)|
+
 
 ### Datasets
 
 * [`df18to21H.csv`](../data/df18to21H.csv): Raw 2018 to 2021 Sentencing Commission Data 
 * [`df18to21_cleanedH.csv`](../data/df18to21_cleanedH.csv): Cleaned, Imputed, Feature Engineered 2018 to 2021 Sentencing Commission Data
-* [`PEPPOP2021.NST_EST2021_POP-2022-05-11T014539.csv`](../data/PEPPOP2021.NST_EST2021_POP-2022-05-11T014539.csv): Raw 2021 Census Data
 * [`census_20.csv`](../data/census_20.csv): Raw 2020 Census Data
 * [`population.csv`](../data/population.csv): Combined and Feature Engineered Population Data 
 
@@ -51,18 +69,12 @@
 |**perc_charged**|0% - 100%|Percentage of state's population that has been convicted of a crime|
 
 
-
 **Cleaned and Feature Engineered 2018- 2021 Population Data**
 
 
 |Feature|Type|Description|
 |---|---|---|
 |state| object |Name of each state in U.S., as well as Washington D.C| 
-| 2018 | int |2018 state population| 
-| 2019 | int |2019 state population| 
-| 2020 | int |2020 state population| 
-| 2021 | int |2021 state population| 
-| average | float |Average state population| 
 | 2020_pop | int |2020 state population| 
 | 2020_whitepop | int |Number of residents of state the 2020 Census determined to be 100% white| 
 | 2020_white_per | float |Percentage of state that is 100% white in 2020| 
@@ -80,6 +92,20 @@
 ## Data Analysis
 
 
+
 ---
 
 ## Conclusion and Recommendations
+
+We anticipated large variance in sentence length based on race. Largest impact on length:
+- Crime Type, Plea/Trial, Firearm
+- Midwestern, Southern vs. Northeast, West Coast States
+
+Recommendations for U.S. Sentencing Commission, DOJ 
+- Review of geographic variance
+- Review of gender disparity 
+- Ensure adequate legal counsel
+- Address recidivism
+
+Further Research
+- Adding presiding judge, acting prosecutor to dataset 
