@@ -88,7 +88,7 @@ with col14:
 user_input = np.array([[year_sent,gender,dependents,college,race,disposition,
     citizen,state,criminal_history,drug_type,age,weapon,presentence,crime_type]])
 
-with open("../data/saved_lasso_sent_model.pkl", "rb") as f:
+with open("./data/saved_lasso_sent_model.pkl", "rb") as f:
     lasso_pipe = pickle.load(f)
 
 def sent_predicter(pred_model,user_input):

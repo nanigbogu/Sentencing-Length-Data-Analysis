@@ -45,5 +45,5 @@ print(lasso_pipe.score(X_train,y_train)), print(lasso_pipe.score(X_test,y_test))
 
 print('works')
 
-with open("../data/saved_lasso_sent_model.pkl", "wb") as file:
+with open("./data/saved_lasso_sent_model.pkl", "wb") as file:
     pickle.dump(lasso_pipe, file)
