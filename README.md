@@ -107,7 +107,7 @@ Furthermore, the below criteria was used to impute missing values:
 
 The data from the U.S. 2020 Census was downloaded in CSV form from the census [website](https://data.census.gov/cedsci/table?q=race%20states&tid=DECENNIALPL2020.P3) and read into the workbooks via Pandas. Additional columns were created using this data to calculate the percentage of a given state's population is White, as well as number in convictions in the state over the 4-year period per 100K residents (per 2020 Census).
 
-In additioan to the previously cited Pandas, sklearn and pickle were used for model construction and deployment. 
+In addition to the previously cited Pandas, sklearn and pickle were used for model construction and deployment. 
 
 ---
 
