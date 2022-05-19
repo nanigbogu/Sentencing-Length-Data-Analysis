@@ -11,7 +11,7 @@ import pickle
 from sklearn.pipeline import Pipeline
 
 
-df_data = pd.read_csv('../data/df18to21_cleanedH.csv')
+df_data = pd.read_csv('./data/df18to21_cleanedH.csv')
 
 # df_data = df_data.drop(columns=['Unnamed: 0','Unnamed: 0.3','Unnamed: 0.2','Unnamed: 0.1',])
 
